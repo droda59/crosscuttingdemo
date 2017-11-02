@@ -1,0 +1,24 @@
+﻿@model IEnumerable<UserDto>
+@{
+    ViewData["Title"] = "Users";
+}
+
+<table class="table table-hover">
+    <thead>
+    <th>Name</th>
+    <th>BirthDate</th>
+    <th>Employer</th>
+    </thead>
+    <tbody>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <td>
+                @Html.ActionLink(user.Name, "User", "Home", new { id = user.Id }, null)
+            </td>
+            <td>@user.BirthDate.ToShortDateString()</td>
+            <td>@user.Employer</td>
+        </tr>
+    }
+    </tbody>
+</table>

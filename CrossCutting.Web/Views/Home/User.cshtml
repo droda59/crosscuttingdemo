@@ -1,0 +1,8 @@
+﻿@model UserDto
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+@Html.ActionLink("Back", "Users", "Home")
+
+<h1>@Model.Name</h1>
